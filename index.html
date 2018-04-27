@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="dist/wu-icons-style.css">
+<link rel="stylesheet" href="css/styles.css">
+
+
+
+  <title>Weather App</title>
+</head>
+
+<body>
+
+
+<!-- <div class="row justify-content-center pb-5">
+    <h1>This is my header</h1>
+  </div> -->
+
+<!-- Button trigger modal -->
+
+<div class="row">
+<div class="col mx-autotext-center text-center pb-3">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locationModal">
+      Change Location
+    </button>
+  </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Pick a new Location</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Begin Form -->
+        <form>
+          <div class="form-group">
+            <label for="cityInput">New City</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter new city">
+          </div>
+          <div class="form-group">
+            <label for="stateInput">New State</label>
+            <input type="text" class="form-control" id="state" placeholder="Enter new state">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="w-change-btn" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div id="mainForecast" class="row justify-content-center">
+  
+<div class="col-12  px-2 pb-3">
+  <h1 id="mainCity" class="text-center"></h1>
+</div>
+  
+
+
+    <div class="col-sm-6 px-2">
+      <h1 id="mainCity" class="text-center"></h1>
+      <h1 class="text-right" id="mainDayIcon"></h1>
+
+    </div>
+
+
+
+     <div class="col-sm-6 px-2">
+      <h1 class="text-center"></h1>
+<h1 id="currentTemp" class="text-left"></h1>
+<div class="col-12 fcbtn pb-4">
+  <button id="fBtn" type="button" class="btn btn-primary">F°</button>
+  <button id="cBtn" type="button" class="btn btn-info">C°</button>
+</div>
+</div>
+
+
+
+    </div>
+<div class="col-12  px-2">
+<p class="text-center" id="mainDayText"></p>
+</div>
+  </div>
+ 
+<!-- Five day forecast -->
+<div class="row justify-content-center">
+
+
+
+  <div class="col-sm-2  sol-md-3 px-2">
+      <h3 id="day1" class="text-center"></h3>
+      <h1 id="dayIcon1" class="mx-auto d-block wu wu-white wu-64 wu-adf"></h1>
+        <div class="row">
+          <div class="col-6 text-right pr-2">
+            <h2 id="dayHigh1" class="font-weight-bold"></h2>
+          </div>
+          <div class="col-6 pl-2">
+            <h2 id="dayLow1" class=""></h2>
+          </div>
+        </div>
+  </div>
+
+  <div class="fiveDay col-sm-2  sol-md-3 px-2">
+    <h3 id="day2" class="text-center"></h3>
+    <h1 id="dayIcon2" class="mx-auto d-block wu wu-white wu-64 wu-"></h1>
+        <div class="row">
+          <div class="col-6 text-right pr-2">
+            <h2 id="dayHigh2" class="font-weight-bold"></h2>
+          </div>
+          <div class="col-6 pl-2">
+            <h2 id="dayLow2" class=""></h2>
+          </div>
+        </div>
+  </div>
+
+    <div class="fiveDay col-sm-2  sol-md-3 px-2">
+      <h3 id="day3" class="text-center"></h3>
+      <h1 id="dayIcon3" class="mx-auto d-block wu wu-white wu-64 wu-"></h1>
+        <div class="row">
+          <div class="col-6 text-right pr-2">
+            <h2 id="dayHigh3" class="font-weight-bold"></h2>
+          </div>
+          <div class="col-6 pl-2">
+            <h2 id="dayLow3" class=""></h2>
+          </div>
+        </div>
+    </div>
+
+  <div class="fiveDay col-sm-2  sol-md-3 px-2">
+    <h3 id="day4" class="text-center"></h3>
+    <h1 id="dayIcon4" class="mx-auto d-block wu wu-white wu-64 wu-"></h1>
+        <div class="row">
+          <div class="col-6 text-right pr-2">
+            <h2 id="dayHigh4" class="font-weight-bold"></h2>
+          </div>
+          <div class="col-6 pl-2">
+            <h2 id="dayLow4" class=""></h2>
+          </div>
+        </div>
+  </div>
+
+  <div class="fiveDay col-sm-2  sol-md-3 px-2">
+    <h3 id="day5" class="text-center"></h3>
+    <h1 id="dayIcon5" class="mx-auto d-block wu wu-white wu-64 wu-"></h1>
+        <div class="row">
+          <div class="col-6 text-right pr-2">
+            <h2 id="dayHigh5" class="font-weight-bold"></h2>
+          </div>
+          <div class="col-6 pl-2">
+            <h2 id="dayLow5" class=""></h2>
+          </div>
+        </div>
+  </div>
+
+
+<div id="demo"></div>
+
+</div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
